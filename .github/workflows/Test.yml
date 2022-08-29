@@ -30,6 +30,7 @@ jobs  :
           echo ${{ github.event.workflow_run.env }}
           echo ${{ github.event.workflow_run.github.ref }}
           echo ${{ github.event.workflow_run.repository.default_branch }}
+          echo git rev-parse --abbrev-ref HEAD
       - run: git branch
       - run: env
       - run: echo "this is a tag :-)"
