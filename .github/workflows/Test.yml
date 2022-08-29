@@ -21,6 +21,7 @@ jobs  :
           ref: ${{ github.event.workflow_run.head_branch }}
       - run: |
           echo '${{ toJSON(github) }}'
+          echo "github.event.workflow_run.head_branch"
           echo ${{ github.event.workflow_run.head_branch }}
           echo ${{ github.event.workflow_run.head_sha }}
           echo ${{ github.event.workflow_run.status }}
@@ -30,7 +31,9 @@ jobs  :
           echo ${{ github.event.workflow_run.env }}
           echo ${{ github.event.workflow_run.github.ref }}
           echo ${{ github.event.workflow_run.repository.default_branch }}
+          echo "git rev parse head:"
           echo git rev-parse --abbrev-ref HEAD
+          echo ${{ git rev-parse --abbrev-ref HEAD }}
           
           
           
